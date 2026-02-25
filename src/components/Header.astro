@@ -6,14 +6,15 @@ const navLinks = [
   { href: '#contacts', label: 'Контакты' },
 ];
 
-const telegramBotUrl = 'https://t.me/sellerbox_bot';
+const telegramBotUrl = 'https://t.me/wb_aihelper_bot';
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
   <div class="container">
     <nav class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
+      <a href={base} class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-brand-700 flex items-center justify-center shadow-lg group-hover:shadow-brand-500/30 transition-shadow">
           <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"/>

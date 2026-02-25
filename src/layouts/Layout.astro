@@ -10,6 +10,8 @@ const {
   title = "SellerBox — Инструменты для продавцов Wildberries",
   description = "Калькулятор юнит-экономики, AI-генерация карточек, SEO-аналитика и мониторинг складов WB. Бесплатно в Telegram."
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -35,7 +37,7 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <title>{title}</title>
   </head>
   <body class="bg-grid bg-gradient-mesh min-h-screen antialiased">

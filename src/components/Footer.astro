@@ -1,7 +1,8 @@
 ---
 const currentYear = new Date().getFullYear();
-const telegramBotUrl = 'https://t.me/sellerbox_bot';
-const telegramChannelUrl = 'https://t.me/sellerbox_news';
+const telegramBotUrl = 'https://t.me/wb_aihelper_bot';
+const telegramChannelUrl = 'https://t.me/wb_aihelper_news';
+const base = import.meta.env.BASE_URL;
 
 const footerLinks = {
   product: [
@@ -16,9 +17,9 @@ const footerLinks = {
     { label: 'Контакты', href: '#contacts' }
   ],
   legal: [
-    { label: 'Политика конфиденциальности', href: '/privacy' },
-    { label: 'Пользовательское соглашение', href: '/terms' },
-    { label: 'Оферта', href: '/offer' }
+    { label: 'Политика конфиденциальности', href: `${base}privacy` },
+    { label: 'Пользовательское соглашение', href: `${base}terms` },
+    { label: 'Оферта', href: `${base}offer` }
   ]
 };
 ---
@@ -28,7 +29,7 @@ const footerLinks = {
     <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
       <!-- Brand column -->
       <div class="lg:col-span-2 pr-8">
-        <a href="/" class="flex items-center gap-3 mb-6">
+        <a href={base} class="flex items-center gap-3 mb-6">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
             <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"/>
