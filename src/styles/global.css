@@ -61,19 +61,15 @@ body {
   line-height: 1.6;
 }
 
-/* Dot grid background pattern */
-.bg-grid {
+/* Combined grid + gradient mesh background */
+.bg-grid.bg-gradient-mesh {
   background-image:
-    radial-gradient(circle at 1px 1px, var(--color-slate-200) 1px, transparent 0);
-  background-size: 24px 24px;
-}
-
-/* Gradient mesh backgrounds */
-.bg-gradient-mesh {
-  background:
+    linear-gradient(to right, rgba(203, 213, 225, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.15) 1px, transparent 1px),
     radial-gradient(ellipse 80% 50% at 20% 40%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
     radial-gradient(ellipse 60% 40% at 80% 20%, rgba(147, 51, 234, 0.06) 0%, transparent 50%),
     radial-gradient(ellipse 50% 30% at 40% 80%, rgba(126, 34, 206, 0.05) 0%, transparent 50%);
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%;
 }
 
 /* Heading styles */
@@ -290,7 +286,7 @@ body {
 }
 
 .animate-on-scroll.is-visible {
-  animation: fade-in-up 0.8s var(--ease-out-expo) forwards;
+  animation: fade-in-up 1s var(--ease-out-expo) forwards;
 }
 
 /* Phone mockup */

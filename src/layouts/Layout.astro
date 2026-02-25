@@ -47,8 +47,8 @@ const base = import.meta.env.BASE_URL;
       // Intersection Observer for scroll animations
       const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+        rootMargin: '-100px',
+        threshold: 0.2
       };
 
       const observer = new IntersectionObserver((entries) => {
