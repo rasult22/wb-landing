@@ -1,0 +1,107 @@
+---
+const navLinks = [
+  { href: '#features', label: 'Возможности' },
+  { href: '#pricing', label: 'Тарифы' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contacts', label: 'Контакты' },
+];
+
+const telegramBotUrl = 'https://t.me/sellerbox_bot';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
+  <div class="container">
+    <nav class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-brand-700 flex items-center justify-center shadow-lg group-hover:shadow-brand-500/30 transition-shadow">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"/>
+          </svg>
+        </div>
+        <span class="font-display font-bold text-xl text-slate-800">
+          Seller<span class="text-brand-600">Box</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="font-display font-medium text-slate-600 hover:text-brand-600 transition-colors relative group"
+          >
+            {link.label}
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href={telegramBotUrl} target="_blank" rel="noopener" class="btn btn-primary btn-md">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+          </svg>
+          Открыть в Telegram
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-toggle"
+        class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-slate-100 transition-colors"
+        aria-label="Меню"
+      >
+        <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-20 bg-white/95 backdrop-blur-lg z-40">
+    <div class="container py-8">
+      <div class="flex flex-col gap-4">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="font-display font-semibold text-lg text-slate-700 hover:text-brand-600 py-3 border-b border-slate-100 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={telegramBotUrl}
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary btn-lg mt-4"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+          </svg>
+          Открыть в Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Header background on scroll
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 50) {
+      header?.classList.add('bg-white/80', 'backdrop-blur-lg', 'shadow-sm');
+    } else {
+      header?.classList.remove('bg-white/80', 'backdrop-blur-lg', 'shadow-sm');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>

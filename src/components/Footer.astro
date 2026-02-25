@@ -1,0 +1,129 @@
+---
+const currentYear = new Date().getFullYear();
+const telegramBotUrl = 'https://t.me/sellerbox_bot';
+const telegramChannelUrl = 'https://t.me/sellerbox_news';
+
+const footerLinks = {
+  product: [
+    { label: 'Калькулятор', href: '#features' },
+    { label: 'AI-карточки', href: '#features' },
+    { label: 'SEO-аналитика', href: '#features' },
+    { label: 'Мониторинг складов', href: '#features' }
+  ],
+  company: [
+    { label: 'Тарифы', href: '#pricing' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Контакты', href: '#contacts' }
+  ],
+  legal: [
+    { label: 'Политика конфиденциальности', href: '/privacy' },
+    { label: 'Пользовательское соглашение', href: '/terms' },
+    { label: 'Оферта', href: '/offer' }
+  ]
+};
+---
+
+<footer id="contacts" class="bg-slate-900 text-white">
+  <div class="container py-16 lg:py-20">
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+      <!-- Brand column -->
+      <div class="lg:col-span-2 pr-8">
+        <a href="/" class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"/>
+            </svg>
+          </div>
+          <span class="font-display font-bold text-xl">
+            Seller<span class="text-brand-400">Box</span>
+          </span>
+        </a>
+        <p class="text-slate-400 mb-6 max-w-sm">
+          Все инструменты для успешных продаж на Wildberries. Калькулятор, AI-карточки, SEO и мониторинг складов — в одном Telegram-боте.
+        </p>
+
+        <!-- Social links -->
+        <div class="flex gap-3">
+          <a
+            href={telegramBotUrl}
+            target="_blank"
+            rel="noopener"
+            class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition-colors"
+            aria-label="Telegram Bot"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+            </svg>
+          </a>
+          <a
+            href={telegramChannelUrl}
+            target="_blank"
+            rel="noopener"
+            class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition-colors"
+            aria-label="Telegram Channel"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product links -->
+      <div>
+        <h4 class="font-display font-semibold text-white mb-4">Продукт</h4>
+        <ul class="space-y-3">
+          {footerLinks.product.map(link => (
+            <li>
+              <a href={link.href} class="text-slate-400 hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company links -->
+      <div>
+        <h4 class="font-display font-semibold text-white mb-4">Компания</h4>
+        <ul class="space-y-3">
+          {footerLinks.company.map(link => (
+            <li>
+              <a href={link.href} class="text-slate-400 hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal links -->
+      <div>
+        <h4 class="font-display font-semibold text-white mb-4">Документы</h4>
+        <ul class="space-y-3">
+          {footerLinks.legal.map(link => (
+            <li>
+              <a href={link.href} class="text-slate-400 hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-slate-800">
+    <div class="container py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-slate-500 text-sm">
+          © {currentYear} SellerBox. Все права защищены.
+        </p>
+        <p class="text-slate-600 text-xs">
+          Не является официальным продуктом Wildberries
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

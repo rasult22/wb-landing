@@ -1,0 +1,249 @@
+---
+const miniAppFeatures = [
+  {
+    icon: 'sparkles',
+    iconClass: 'featured-icon',
+    title: 'AI-генерация инфографики',
+    description: 'Загрузите фото товара, укажите текст — получите готовую карточку для Wildberries. Генерация на базе Google Nano Banana Pro за 30 секунд.',
+    features: [
+      'Мультикарточки — несколько карточек за раз',
+      'Настраиваемые стили и текст',
+      'Редактирование и регенерация',
+      'Шаринг прямо из Telegram'
+    ],
+    image: 'ai-cards'
+  },
+  {
+    icon: 'calculator',
+    iconClass: 'featured-icon featured-icon-success',
+    title: 'Калькулятор юнит-экономики',
+    description: 'Рассчитайте маржинальность товара с учётом всех комиссий WB, логистики, налогов и маркетинга.',
+    features: [
+      'Комиссии WB по категориям (актуальные данные)',
+      'Логистика FBO/FBS, все склады',
+      'Налоги УСН, НДС, эквайринг',
+      'Маркетинговые метрики: CPO, CPS, ROI',
+      'Несколько ИП-профилей'
+    ],
+    image: 'calculator'
+  }
+];
+
+const botFeatures = [
+  {
+    icon: 'search',
+    iconClass: 'featured-icon featured-icon-purple',
+    title: 'SEO-аналитика карточек',
+    description: 'Анализ и оптимизация SEO для карточек товаров на Wildberries.',
+    features: [
+      'Анализ ключевых слов',
+      'Рекомендации по оптимизации',
+      'Сравнение с конкурентами',
+      'Уведомления об изменениях'
+    ]
+  },
+  {
+    icon: 'warehouse',
+    iconClass: 'featured-icon featured-icon-warning',
+    title: 'Мониторинг складов WB',
+    description: 'Отслеживание свободных слотов приёмки на складах Wildberries.',
+    features: [
+      'Мониторинг всех складов WB',
+      'Push-уведомления в Telegram',
+      'Фильтры по складам и датам',
+      'История доступности'
+    ]
+  }
+];
+
+const offlineFeatures = [
+  {
+    icon: 'truck',
+    iconClass: 'featured-icon featured-icon-indigo',
+    title: 'Логистика',
+    description: 'Полный цикл логистики для вашего товара: от склада до Wildberries. Берём на себя доставку и все организационные вопросы.'
+  },
+  {
+    icon: 'package',
+    iconClass: 'featured-icon featured-icon-pink',
+    title: 'Упаковка товара',
+    description: 'Профессиональная упаковка товара по требованиям Wildberries. Маркировка, стикеры, комплектация.'
+  }
+];
+---
+
+<section id="features" class="section bg-white">
+  <div class="container">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge mb-4">Возможности</span>
+      <h2 class="heading-section text-3xl md:text-4xl lg:text-5xl text-slate-900">
+        Всё для успешных продаж на
+        <span class="text-gradient">Wildberries</span>
+      </h2>
+      <p class="text-lg text-slate-600 mt-4">
+        Инструменты, которые помогут вам анализировать, создавать и масштабировать ваш бизнес
+      </p>
+    </div>
+
+    <!-- Mini App Features (Large cards) -->
+    <div class="space-y-8 mb-16">
+      {miniAppFeatures.map((feature, index) => (
+        <div class={`card p-8 lg:p-12 animate-on-scroll ${index % 2 === 1 ? 'delay-100' : ''}`}>
+          <div class={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <!-- Category badge -->
+              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold text-brand-600 uppercase tracking-wider mb-4">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+                </svg>
+                Mini App
+              </span>
+
+              <!-- Icon -->
+              <div class={`${feature.iconClass} mb-6`}>
+                {feature.icon === 'sparkles' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+                  </svg>
+                )}
+                {feature.icon === 'calculator' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z"/>
+                  </svg>
+                )}
+              </div>
+
+              <h3 class="heading-section text-2xl lg:text-3xl text-slate-900 mb-4">{feature.title}</h3>
+              <p class="text-slate-600 mb-6">{feature.description}</p>
+
+              <!-- Feature list -->
+              <ul class="space-y-3">
+                {feature.features.map(item => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Feature visual -->
+            <div class={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <div class="relative bg-gradient-to-br from-slate-100 to-slate-50 rounded-2xl p-6 lg:p-8 aspect-[4/3] flex items-center justify-center">
+                <!-- Placeholder for screenshot -->
+                {feature.image === 'ai-cards' && (
+                  <div class="grid grid-cols-2 gap-4 w-full max-w-sm">
+                    <div class="bg-white rounded-xl shadow-medium p-4 aspect-[3/4]">
+                      <div class="w-full h-3/4 bg-gradient-to-br from-brand-100 to-brand-200 rounded-lg mb-3"></div>
+                      <div class="h-2 bg-slate-200 rounded w-3/4 mb-2"></div>
+                      <div class="h-2 bg-slate-100 rounded w-1/2"></div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-medium p-4 aspect-[3/4] translate-y-4">
+                      <div class="w-full h-3/4 bg-gradient-to-br from-pink-100 to-pink-200 rounded-lg mb-3"></div>
+                      <div class="h-2 bg-slate-200 rounded w-3/4 mb-2"></div>
+                      <div class="h-2 bg-slate-100 rounded w-1/2"></div>
+                    </div>
+                  </div>
+                )}
+                {feature.image === 'calculator' && (
+                  <div class="w-full max-w-xs bg-white rounded-xl shadow-medium p-6">
+                    <div class="space-y-4">
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-slate-500">Себестоимость</span>
+                        <span class="font-display font-bold text-slate-800">850 ₽</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-slate-500">Комиссия WB</span>
+                        <span class="font-display font-bold text-slate-800">15%</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-slate-500">Логистика</span>
+                        <span class="font-display font-bold text-slate-800">120 ₽</span>
+                      </div>
+                      <div class="h-px bg-slate-200"></div>
+                      <div class="flex justify-between items-center bg-green-50 -mx-6 px-6 py-3 rounded-b-xl">
+                        <span class="text-sm font-medium text-green-700">Прибыль</span>
+                        <span class="font-display font-bold text-green-700">487 ₽</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <!-- Decorative elements -->
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-brand-200/50 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-300/30 rounded-full blur-2xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bot Features (Medium cards) -->
+    <div class="mb-8">
+      <p class="text-sm font-display font-semibold text-slate-400 uppercase tracking-wider mb-6 text-center">Telegram Bot</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {botFeatures.map((feature, index) => (
+          <div class={`card p-6 lg:p-8 animate-on-scroll delay-${(index + 1) * 100}`}>
+            <div class={feature.iconClass + ' mb-5'}>
+              {feature.icon === 'search' && (
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                </svg>
+              )}
+              {feature.icon === 'warehouse' && (
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="heading-section text-xl text-slate-900 mb-3">{feature.title}</h3>
+            <p class="text-slate-600 mb-5">{feature.description}</p>
+            <ul class="space-y-2">
+              {feature.features.map(item => (
+                <li class="flex items-center gap-2 text-sm text-slate-600">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Offline Features (Small cards) -->
+    <div>
+      <p class="text-sm font-display font-semibold text-slate-400 uppercase tracking-wider mb-6 text-center">Офлайн-сервисы</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {offlineFeatures.map((feature, index) => (
+          <div class={`card p-6 animate-on-scroll delay-${(index + 1) * 100}`}>
+            <div class="flex items-start gap-4">
+              <div class={feature.iconClass + ' flex-shrink-0'}>
+                {feature.icon === 'truck' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+                  </svg>
+                )}
+                {feature.icon === 'package' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h3 class="heading-section text-lg text-slate-900 mb-2">{feature.title}</h3>
+                <p class="text-slate-600 text-sm">{feature.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+---
+const faqs = [
+  {
+    question: 'Как начать пользоваться?',
+    answer: 'Просто нажмите кнопку «Открыть в Telegram» и перейдите к нашему боту. Никакой регистрации — вы сразу получите доступ ко всем бесплатным функциям.'
+  },
+  {
+    question: 'Это действительно бесплатно?',
+    answer: 'Да! Бесплатный тариф включает калькулятор без ограничений, 3 генерации AI-карточек в месяц, базовый SEO-анализ и мониторинг 1 склада. Для расширенных возможностей есть платные тарифы.'
+  },
+  {
+    question: 'Откуда берутся данные о комиссиях WB?',
+    answer: 'Мы регулярно обновляем данные из официальных источников Wildberries. Комиссии актуализируются автоматически, так что вы всегда работаете с точными цифрами.'
+  },
+  {
+    question: 'Как работает генерация AI-карточек?',
+    answer: 'Загрузите фото товара, добавьте текст и выберите стиль. Наш AI на базе Google Nano Banana Pro создаст профессиональную инфографику за 30 секунд. Вы можете редактировать и регенерировать результат.'
+  },
+  {
+    question: 'Можно ли использовать без Telegram?',
+    answer: 'На данный момент SellerBox работает только как Telegram Mini App и бот. Это позволяет нам обеспечить максимальное удобство — все инструменты всегда под рукой в вашем мессенджере.'
+  },
+  {
+    question: 'Как заказать логистику или упаковку?',
+    answer: 'Услуги логистики и упаковки доступны через бота. Выберите соответствующий пункт меню, заполните заявку, и наш менеджер свяжется с вами для уточнения деталей.'
+  },
+  {
+    question: 'Как происходит оплата тарифов?',
+    answer: 'Оплата происходит прямо в Telegram через безопасные платёжные методы. Подписка продлевается автоматически, но вы можете отменить её в любой момент.'
+  },
+  {
+    question: 'Есть ли техническая поддержка?',
+    answer: 'Да, поддержка доступна всем пользователям. На бесплатном тарифе — через чат-бота, на платных — приоритетная поддержка и персональный менеджер на тарифе Про.'
+  }
+];
+---
+
+<section id="faq" class="section bg-slate-50/50 relative overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+
+  <div class="container relative">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge mb-4">FAQ</span>
+      <h2 class="heading-section text-3xl md:text-4xl lg:text-5xl text-slate-900">
+        Часто задаваемые
+        <span class="text-gradient">вопросы</span>
+      </h2>
+      <p class="text-lg text-slate-600 mt-4">
+        Ответы на популярные вопросы о SellerBox
+      </p>
+    </div>
+
+    <!-- FAQ accordion -->
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, index) => (
+        <div class={`card overflow-hidden animate-on-scroll delay-${((index % 4) + 1) * 100}`} data-faq>
+          <button
+            class="w-full px-6 py-5 flex items-center justify-between gap-4 text-left hover:bg-slate-50/50 transition-colors"
+            data-faq-trigger
+          >
+            <span class="font-display font-semibold text-slate-900">{faq.question}</span>
+            <svg
+              class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"
+              data-faq-icon
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5" data-faq-content>
+            <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ accordion functionality
+  document.querySelectorAll('[data-faq]').forEach(faq => {
+    const trigger = faq.querySelector('[data-faq-trigger]');
+    const content = faq.querySelector('[data-faq-content]');
+    const icon = faq.querySelector('[data-faq-icon]');
+
+    trigger?.addEventListener('click', () => {
+      const isOpen = !content?.classList.contains('hidden');
+
+      // Close all other FAQs
+      document.querySelectorAll('[data-faq]').forEach(otherFaq => {
+        if (otherFaq !== faq) {
+          otherFaq.querySelector('[data-faq-content]')?.classList.add('hidden');
+          otherFaq.querySelector('[data-faq-icon]')?.classList.remove('rotate-45');
+        }
+      });
+
+      // Toggle current FAQ
+      content?.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-45');
+    });
+  });
+</script>

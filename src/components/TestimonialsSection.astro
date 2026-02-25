@@ -1,0 +1,104 @@
+---
+const testimonials = [
+  {
+    name: 'Анна Смирнова',
+    role: 'Продавец WB, 3 года',
+    avatar: 'А',
+    avatarColor: 'from-brand-400 to-brand-600',
+    rating: 5,
+    text: 'Калькулятор просто спасение! Раньше тратила часы на расчёты в Excel, теперь всё за секунды. Особенно нравится, что комиссии WB всегда актуальные.'
+  },
+  {
+    name: 'Михаил Петров',
+    role: 'Владелец бренда одежды',
+    avatar: 'М',
+    avatarColor: 'from-green-400 to-green-600',
+    rating: 5,
+    text: 'AI-карточки — это что-то невероятное. Создал 50 карточек за один вечер. Качество инфографики отличное, клиенты оценили.'
+  },
+  {
+    name: 'Дарья Козлова',
+    role: 'Менеджер маркетплейсов',
+    avatar: 'Д',
+    avatarColor: 'from-pink-400 to-pink-600',
+    rating: 5,
+    text: 'Мониторинг складов работает как часы. Уведомления приходят мгновенно, успеваю забронировать слоты раньше конкурентов.'
+  },
+  {
+    name: 'Константин Иванов',
+    role: 'Продавец WB, 1 год',
+    avatar: 'К',
+    avatarColor: 'from-orange-400 to-orange-600',
+    rating: 5,
+    text: 'Для новичка это must-have. Всё понятно, удобно, прямо в Telegram. Не нужно разбираться в сложных программах.'
+  },
+  {
+    name: 'Елена Новикова',
+    role: 'Владелец магазина косметики',
+    avatar: 'Е',
+    avatarColor: 'from-purple-400 to-purple-600',
+    rating: 5,
+    text: 'SEO-аналитика помогла вывести карточки в топ. Трафик вырос на 40% за месяц. Рекомендации по оптимизации очень точные.'
+  },
+  {
+    name: 'Артём Волков',
+    role: 'Продавец электроники',
+    avatar: 'А',
+    avatarColor: 'from-cyan-400 to-cyan-600',
+    rating: 5,
+    text: 'Пользуюсь логистикой и упаковкой — качество на высоте. Скидки по тарифу Про окупаются уже на первых поставках.'
+  }
+];
+---
+
+<section class="section bg-white overflow-hidden">
+  <div class="container">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge mb-4">Отзывы</span>
+      <h2 class="heading-section text-3xl md:text-4xl lg:text-5xl text-slate-900">
+        Что говорят наши
+        <span class="text-gradient">клиенты</span>
+      </h2>
+      <p class="text-lg text-slate-600 mt-4">
+        Реальные истории успеха от продавцов Wildberries
+      </p>
+    </div>
+
+    <!-- Testimonials grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map((testimonial, index) => (
+        <div class={`card p-6 animate-on-scroll delay-${((index % 3) + 1) * 100}`}>
+          {/* Rating stars */}
+          <div class="flex gap-1 mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg
+                class={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400' : 'text-slate-200'}`}
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/>
+              </svg>
+            ))}
+          </div>
+
+          {/* Testimonial text */}
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            "{testimonial.text}"
+          </p>
+
+          {/* Author */}
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+            <div class={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.avatarColor} flex items-center justify-center text-white font-display font-bold`}>
+              {testimonial.avatar}
+            </div>
+            <div>
+              <p class="font-display font-semibold text-slate-900">{testimonial.name}</p>
+              <p class="text-sm text-slate-500">{testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

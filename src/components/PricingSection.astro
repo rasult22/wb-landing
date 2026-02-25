@@ -1,0 +1,151 @@
+---
+const telegramBotUrl = 'https://t.me/sellerbox_bot';
+
+const plans = [
+  {
+    name: 'Бесплатный',
+    price: '0',
+    period: 'навсегда',
+    description: 'Идеально для старта',
+    popular: false,
+    features: [
+      { name: 'Калькулятор', value: 'Без ограничений', included: true },
+      { name: 'AI-карточки', value: '3 генерации/мес', included: true },
+      { name: 'SEO-анализ', value: 'Базовый', included: true },
+      { name: 'Мониторинг складов', value: '1 склад', included: true },
+      { name: 'Логистика', value: '—', included: false },
+      { name: 'Упаковка', value: '—', included: false },
+      { name: 'Поддержка', value: 'Чат-бот', included: true }
+    ],
+    cta: 'Начать бесплатно',
+    ctaVariant: 'secondary'
+  },
+  {
+    name: 'Базовый',
+    price: '990',
+    period: '/месяц',
+    description: 'Для активных продавцов',
+    popular: true,
+    features: [
+      { name: 'Калькулятор', value: 'Без ограничений', included: true },
+      { name: 'AI-карточки', value: '30 генераций/мес', included: true },
+      { name: 'SEO-анализ', value: 'Полный анализ', included: true },
+      { name: 'Мониторинг складов', value: '5 складов', included: true },
+      { name: 'Логистика', value: 'Скидка 5%', included: true },
+      { name: 'Упаковка', value: 'Скидка 5%', included: true },
+      { name: 'Поддержка', value: 'Приоритетная', included: true }
+    ],
+    cta: 'Подключить',
+    ctaVariant: 'primary'
+  },
+  {
+    name: 'Про',
+    price: '2 490',
+    period: '/месяц',
+    description: 'Максимум возможностей',
+    popular: false,
+    features: [
+      { name: 'Калькулятор', value: 'Без ограничений', included: true },
+      { name: 'AI-карточки', value: 'Безлимит', included: true },
+      { name: 'SEO-анализ', value: 'Полный + рекомендации', included: true },
+      { name: 'Мониторинг складов', value: 'Все склады', included: true },
+      { name: 'Логистика', value: 'Скидка 15%', included: true },
+      { name: 'Упаковка', value: 'Скидка 15%', included: true },
+      { name: 'Поддержка', value: 'Персональный менеджер', included: true }
+    ],
+    cta: 'Связаться',
+    ctaVariant: 'secondary'
+  }
+];
+---
+
+<section id="pricing" class="section bg-slate-50/50 relative overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+
+  <div class="container relative">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge mb-4">Тарифы</span>
+      <h2 class="heading-section text-3xl md:text-4xl lg:text-5xl text-slate-900">
+        Выберите подходящий
+        <span class="text-gradient">тариф</span>
+      </h2>
+      <p class="text-lg text-slate-600 mt-4">
+        Начните бесплатно и масштабируйтесь вместе с вашим бизнесом
+      </p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+      {plans.map((plan, index) => (
+        <div class={`relative animate-on-scroll delay-${(index + 1) * 100}`}>
+          {/* Popular badge */}
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+              <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-600 to-brand-700 text-white text-sm font-display font-semibold shadow-lg">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/>
+                </svg>
+                Популярный
+              </span>
+            </div>
+          )}
+
+          <div class={`card p-8 h-full flex flex-col ${plan.popular ? 'ring-2 ring-brand-500 shadow-large' : ''}`}>
+            {/* Plan header */}
+            <div class="text-center mb-8">
+              <h3 class="font-display font-bold text-xl text-slate-900 mb-2">{plan.name}</h3>
+              <p class="text-slate-500 text-sm mb-4">{plan.description}</p>
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="font-display font-extrabold text-4xl lg:text-5xl text-slate-900">{plan.price}</span>
+                <span class="text-slate-500"> ₽</span>
+                <span class="text-slate-400 text-sm">{plan.period}</span>
+              </div>
+            </div>
+
+            {/* Features list */}
+            <div class="flex-1 space-y-4 mb-8">
+              {plan.features.map(feature => (
+                <div class="flex items-center justify-between gap-4">
+                  <div class="flex items-center gap-3">
+                    {feature.included ? (
+                      <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                      </svg>
+                    ) : (
+                      <svg class="w-5 h-5 text-slate-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
+                      </svg>
+                    )}
+                    <span class={`text-sm ${feature.included ? 'text-slate-700' : 'text-slate-400'}`}>
+                      {feature.name}
+                    </span>
+                  </div>
+                  <span class={`text-sm font-medium ${feature.included ? 'text-slate-900' : 'text-slate-400'}`}>
+                    {feature.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA button */}
+            <a
+              href={telegramBotUrl}
+              target="_blank"
+              rel="noopener"
+              class={`btn btn-lg w-full ${plan.ctaVariant === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Note */}
+    <p class="text-center text-sm text-slate-500 mt-8">
+      Все цены указаны в рублях. Оплата через Telegram бота.
+    </p>
+  </div>
+</section>
