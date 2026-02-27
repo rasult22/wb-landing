@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Договор оферты — SellerBox">
+  <Header />
+  <main class="pt-32 pb-20">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <a href={base} class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 transition-colors mb-8">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Вернуться на главную
+        </a>
+
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-8">
+          Договор оферты
+        </h1>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-slate-600 text-lg mb-8">
+            Дата последнего обновления: 27 февраля 2026 г.
+          </p>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">1. Общие положения</h2>
+            <p class="text-slate-600 mb-4">
+              Настоящий документ является официальным предложением (публичной офертой) сервиса SellerBox (далее — «Исполнитель») и содержит все существенные условия предоставления платных услуг.
+            </p>
+            <p class="text-slate-600 mb-4">
+              В соответствии с законодательством Республики Казахстан, данный документ является публичной офертой, и в случае принятия изложенных ниже условий физическое или юридическое лицо, производящее акцепт этой оферты, становится Заказчиком.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Акцептом оферты является оплата услуг Исполнителя в порядке и на условиях, изложенных в настоящей оферте.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">2. Предмет договора</h2>
+            <p class="text-slate-600 mb-4">
+              Исполнитель обязуется предоставить Заказчику доступ к платным функциям сервиса SellerBox согласно выбранному тарифному плану, а Заказчик обязуется оплатить услуги в соответствии с условиями настоящей оферты.
+            </p>
+            <p class="text-slate-600 mb-4">Платные услуги включают:</p>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 mb-4">
+              <li>Расширенный доступ к калькулятору юнит-экономики</li>
+              <li>AI-генерация карточек товаров</li>
+              <li>Расширенная SEO-аналитика</li>
+              <li>Мониторинг складов WB</li>
+              <li>Приоритетная техническая поддержка</li>
+            </ul>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">3. Стоимость и порядок оплаты</h2>
+            <p class="text-slate-600 mb-4">
+              Стоимость услуг определяется согласно действующим тарифам, опубликованным на сайте и в Telegram-боте Сервиса.
+            </p>
+            <p class="text-slate-600 mb-4">
+              <strong class="text-slate-900">Все цены указаны в тенге (KZT).</strong>
+            </p>
+            <p class="text-slate-600 mb-4">
+              Оплата производится в безналичной форме путём перечисления денежных средств через платёжный сервис <a href="https://tiptoppay.kz" target="_blank" rel="noopener" class="text-brand-600 hover:text-brand-700">TipTopPay</a>.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Услуга считается оплаченной с момента поступления денежных средств на счёт Исполнителя.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">4. Порядок предоставления услуг</h2>
+            <p class="text-slate-600 mb-4">
+              Доступ к платным функциям предоставляется автоматически после подтверждения оплаты.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Срок действия подписки начинается с момента активации и действует в течение оплаченного периода.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Исполнитель обязуется обеспечить доступ к Сервису 24/7, за исключением периодов технического обслуживания.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">5. Возврат денежных средств</h2>
+            <p class="text-slate-600 mb-4">
+              Заказчик вправе отказаться от услуг и потребовать возврата денежных средств в следующих случаях:
+            </p>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 mb-4">
+              <li>В течение 3 (трёх) календарных дней с момента оплаты, если услуги не были использованы</li>
+              <li>При существенном нарушении Исполнителем условий предоставления услуг</li>
+            </ul>
+            <p class="text-slate-600 mb-4">
+              Для возврата средств необходимо обратиться в службу поддержки через Telegram-бот с указанием причины возврата.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Возврат осуществляется тем же способом, которым была произведена оплата, в течение 10 (десяти) рабочих дней.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">6. Права и обязанности сторон</h2>
+
+            <h3 class="text-xl font-display font-semibold text-slate-900 mb-3 mt-6">Исполнитель обязуется:</h3>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 mb-4">
+              <li>Предоставить доступ к оплаченным услугам в полном объёме</li>
+              <li>Обеспечить техническую поддержку Заказчика</li>
+              <li>Соблюдать конфиденциальность данных Заказчика</li>
+              <li>Информировать о существенных изменениях в работе Сервиса</li>
+            </ul>
+
+            <h3 class="text-xl font-display font-semibold text-slate-900 mb-3 mt-6">Заказчик обязуется:</h3>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 mb-4">
+              <li>Своевременно оплачивать услуги</li>
+              <li>Соблюдать условия <a href={`${base}terms`} class="text-brand-600 hover:text-brand-700">Пользовательского соглашения</a></li>
+              <li>Не передавать доступ к аккаунту третьим лицам</li>
+              <li>Не использовать Сервис в противоправных целях</li>
+            </ul>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">7. Ответственность сторон</h2>
+            <p class="text-slate-600 mb-4">
+              За неисполнение или ненадлежащее исполнение обязательств по настоящему договору стороны несут ответственность в соответствии с законодательством Республики Казахстан.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Исполнитель не несёт ответственности за убытки Заказчика, возникшие в результате неправильного использования Сервиса.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">8. Форс-мажор</h2>
+            <p class="text-slate-600 mb-4">
+              Стороны освобождаются от ответственности за неисполнение обязательств, если оно явилось следствием обстоятельств непреодолимой силы (форс-мажор).
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">9. Срок действия и изменение условий</h2>
+            <p class="text-slate-600 mb-4">
+              Настоящая оферта вступает в силу с момента её публикации и действует до момента её отзыва Исполнителем.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Исполнитель вправе в одностороннем порядке изменять условия оферты. Изменения вступают в силу с момента публикации новой редакции.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">10. Реквизиты Исполнителя</h2>
+            <p class="text-slate-600 mb-4">
+              Полные реквизиты и информация о юридическом лице доступны на странице <a href={`${base}company`} class="text-brand-600 hover:text-brand-700">«Реквизиты и информация о компании»</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+  }
+  .prose ul {
+    padding-left: 1.5rem;
+  }
+</style>

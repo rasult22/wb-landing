@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Пользовательское соглашение — SellerBox">
+  <Header />
+  <main class="pt-32 pb-20">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <a href={base} class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 transition-colors mb-8">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Вернуться на главную
+        </a>
+
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-8">
+          Пользовательское соглашение
+        </h1>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-slate-600 text-lg mb-8">
+            Дата последнего обновления: 27 февраля 2026 г.
+          </p>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">1. Общие положения</h2>
+            <p class="text-slate-600 mb-4">
+              Настоящее Пользовательское соглашение (далее — «Соглашение») регулирует отношения между владельцем сервиса SellerBox (далее — «Администрация») и пользователем (далее — «Пользователь») в связи с использованием сервиса SellerBox (далее — «Сервис»).
+            </p>
+            <p class="text-slate-600 mb-4">
+              Сервис предоставляет инструменты для продавцов маркетплейса Wildberries, включая калькулятор юнит-экономики, AI-генерацию карточек товаров, SEO-аналитику и мониторинг складов.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Начиная использовать Сервис, Пользователь подтверждает своё согласие с условиями настоящего Соглашения.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">2. Условия использования</h2>
+            <p class="text-slate-600 mb-4">Пользователь обязуется:</p>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 mb-4">
+              <li>Использовать Сервис только в законных целях</li>
+              <li>Не нарушать права третьих лиц при использовании Сервиса</li>
+              <li>Не предпринимать попыток несанкционированного доступа к Сервису</li>
+              <li>Не распространять вредоносное программное обеспечение</li>
+              <li>Не использовать автоматизированные средства для массового доступа к Сервису</li>
+              <li>Соблюдать правила использования API Wildberries</li>
+            </ul>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">3. Регистрация и аккаунт</h2>
+            <p class="text-slate-600 mb-4">
+              Для использования Сервиса необходима авторизация через Telegram. Пользователь несёт ответственность за сохранность своих учётных данных.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Администрация вправе заблокировать или удалить аккаунт Пользователя в случае нарушения условий настоящего Соглашения.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">4. Платные услуги</h2>
+            <p class="text-slate-600 mb-4">
+              Сервис предоставляет как бесплатные, так и платные функции. Стоимость платных услуг указана на странице тарифов и в Telegram-боте.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Все цены указаны в тенге (KZT). Оплата осуществляется через платёжный сервис <a href="https://tiptoppay.kz" target="_blank" rel="noopener" class="text-brand-600 hover:text-brand-700">TipTopPay</a>.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Условия оплаты и возврата денежных средств регулируются <a href={`${base}offer`} class="text-brand-600 hover:text-brand-700">Договором оферты</a>.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">5. Интеллектуальная собственность</h2>
+            <p class="text-slate-600 mb-4">
+              Все права на Сервис, включая дизайн, программный код, товарные знаки и контент, принадлежат Администрации или её лицензиарам.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Пользователю предоставляется ограниченная, неисключительная лицензия на использование Сервиса в соответствии с настоящим Соглашением.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">6. Ограничение ответственности</h2>
+            <p class="text-slate-600 mb-4">
+              Сервис предоставляется «как есть». Администрация не гарантирует бесперебойную работу Сервиса и не несёт ответственности за:
+            </p>
+            <ul class="list-disc list-inside text-slate-600 space-y-2 mb-4">
+              <li>Убытки, возникшие в результате использования или невозможности использования Сервиса</li>
+              <li>Точность и полноту информации, полученной через Сервис</li>
+              <li>Действия третьих лиц</li>
+              <li>Изменения в работе API Wildberries</li>
+              <li>Технические сбои и неполадки</li>
+            </ul>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">7. Отказ от ответственности</h2>
+            <p class="text-slate-600 mb-4">
+              SellerBox не является официальным продуктом или партнёром Wildberries. Все данные получены из открытых источников или предоставлены Пользователем.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Администрация не несёт ответственности за решения, принятые Пользователем на основе данных Сервиса.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">8. Изменение условий</h2>
+            <p class="text-slate-600 mb-4">
+              Администрация оставляет за собой право изменять условия настоящего Соглашения. Актуальная версия всегда доступна на данной странице.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Продолжение использования Сервиса после внесения изменений означает согласие с новой редакцией Соглашения.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">9. Применимое право</h2>
+            <p class="text-slate-600 mb-4">
+              Настоящее Соглашение регулируется законодательством Республики Казахстан.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Все споры разрешаются путём переговоров, а при невозможности достижения согласия — в судебном порядке по месту нахождения Администрации.
+            </p>
+          </section>
+
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">10. Контакты</h2>
+            <p class="text-slate-600 mb-4">
+              По всем вопросам, связанным с использованием Сервиса, обращайтесь через Telegram-бот или по контактам на странице <a href={`${base}company`} class="text-brand-600 hover:text-brand-700">реквизитов</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+  }
+  .prose ul {
+    padding-left: 1.5rem;
+  }
+</style>
