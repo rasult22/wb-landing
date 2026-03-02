@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Реквизиты и информация о компании — SellerBox">
+<Layout title="Реквизиты и информация о компании — SellerBox" description="Юридическая информация, банковские реквизиты и контактные данные компании SellerBox. Связь через Telegram-бот и email.">
   <Header />
   <main class="pt-32 pb-20">
     <div class="container">
@@ -23,6 +23,20 @@ const base = import.meta.env.BASE_URL;
         </h1>
 
         <div class="prose prose-lg max-w-none">
+
+          <!-- About section -->
+          <section class="mb-10">
+            <h2 class="text-2xl font-display font-semibold text-slate-900 mb-4">О сервисе</h2>
+            <p class="text-slate-600 mb-4">
+              SellerBox — это платформа инструментов для продавцов маркетплейса Wildberries, работающая через Telegram-бот. Мы помогаем предпринимателям автоматизировать рутинные задачи, анализировать экономику товаров и повышать эффективность продаж.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Наш сервис предоставляет калькулятор юнит-экономики с актуальными комиссиями WB, AI-генерацию инфографики для карточек товаров, SEO-аналитику для оптимизации поисковой выдачи и мониторинг доступности складов Wildberries. Все инструменты доступны прямо в Telegram — без необходимости устанавливать дополнительные приложения.
+            </p>
+            <p class="text-slate-600 mb-4">
+              Компания зарегистрирована в Республике Казахстан. Оплата услуг осуществляется в тенге (KZT) через сертифицированный платёжный сервис TipTopPay.
+            </p>
+          </section>
 
           <!-- Company Info Card -->
           <section class="mb-10">
