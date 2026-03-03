@@ -191,6 +191,11 @@ body {
   color: #4f46e5;
 }
 
+.featured-icon-orange {
+  background: linear-gradient(135deg, #ffedd5 0%, #fff7ed 100%);
+  color: #ea580c;
+}
+
 .featured-icon-pink {
   background: linear-gradient(135deg, #fce7f3 0%, #fdf2f8 100%);
   color: #db2777;

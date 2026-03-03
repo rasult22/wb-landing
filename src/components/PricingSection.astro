@@ -13,6 +13,7 @@ const plans = [
       { name: 'AI-карточки', value: '3 генерации/мес', included: true },
       { name: 'SEO-анализ', value: 'Базовый', included: true },
       { name: 'Мониторинг складов', value: '1 склад', included: true },
+      { name: 'Поиск товаров в 1688', value: '—', included: false },
       { name: 'Логистика', value: '—', included: false },
       { name: 'Упаковка', value: '—', included: false },
       { name: 'Поддержка', value: 'Чат-бот', included: true }
@@ -21,40 +22,23 @@ const plans = [
     ctaVariant: 'secondary'
   },
   {
-    name: 'Базовый',
-    price: '990',
-    period: '/месяц',
-    description: 'Для активных продавцов',
-    popular: true,
-    features: [
-      { name: 'Калькулятор', value: 'Без ограничений', included: true },
-      { name: 'AI-карточки', value: '30 генераций/мес', included: true },
-      { name: 'SEO-анализ', value: 'Полный анализ', included: true },
-      { name: 'Мониторинг складов', value: '5 складов', included: true },
-      { name: 'Логистика', value: 'Скидка 5%', included: true },
-      { name: 'Упаковка', value: 'Скидка 5%', included: true },
-      { name: 'Поддержка', value: 'Приоритетная', included: true }
-    ],
-    cta: 'Подключить',
-    ctaVariant: 'primary'
-  },
-  {
     name: 'Про',
-    price: '2 490',
+    price: '30 000',
     period: '/месяц',
     description: 'Максимум возможностей',
-    popular: false,
+    popular: true,
     features: [
       { name: 'Калькулятор', value: 'Без ограничений', included: true },
       { name: 'AI-карточки', value: 'Безлимит', included: true },
       { name: 'SEO-анализ', value: 'Полный + рекомендации', included: true },
       { name: 'Мониторинг складов', value: 'Все склады', included: true },
+      { name: 'Поиск товаров в 1688', value: 'Безлимит', included: true },
       { name: 'Логистика', value: 'Скидка 15%', included: true },
       { name: 'Упаковка', value: 'Скидка 15%', included: true },
       { name: 'Поддержка', value: 'Персональный менеджер', included: true }
     ],
-    cta: 'Связаться',
-    ctaVariant: 'secondary'
+    cta: 'Подключить',
+    ctaVariant: 'primary'
   }
 ];
 ---
@@ -77,7 +61,7 @@ const plans = [
     </div>
 
     <!-- Pricing cards -->
-    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
       {plans.map((plan, index) => (
         <div class={`relative animate-on-scroll delay-${(index + 1) * 100}`}>
           {/* Popular badge */}
@@ -99,7 +83,7 @@ const plans = [
               <p class="text-slate-500 text-sm mb-4">{plan.description}</p>
               <div class="flex items-baseline justify-center gap-1">
                 <span class="font-display font-extrabold text-4xl lg:text-5xl text-slate-900">{plan.price}</span>
-                <span class="text-slate-500"> ₽</span>
+                <span class="text-slate-500"> ₸</span>
                 <span class="text-slate-400 text-sm">{plan.period}</span>
               </div>
             </div>
@@ -145,7 +129,7 @@ const plans = [
 
     {/* Note */}
     <p class="text-center text-sm text-slate-500 mt-8">
-      Все цены указаны в рублях. Оплата через Telegram бота.
+      Все цены указаны в тенге. Оплата через Telegram бота.
     </p>
   </div>
 </section>
