@@ -3,7 +3,7 @@
 name: Push-to-S3
 
 env:
-  DEPLOY_PACKAGE_NAME: "sellbox_ai_${{ github.sha }}.zip"
+  DEPLOY_PACKAGE_NAME: "sellerbox_ai_${{ github.sha }}.zip"
 
 on:
   push:
