@@ -36,7 +36,7 @@ jobs:
         run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./dist -x *.git*
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync dist/ s3://sellbox.ai --delete
+        run: aws s3 sync dist/ s3://sellerbox.ai --delete
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -45,5 +45,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1  # Specify your AWS region
       
-      # - name: Invalidate CloudFront Cache
-      #   run: aws cloudfront create-invalidation --distribution-id E3O4HAITLF34VR --paths "/*"
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id E3BJXYHLOMDXGJ --paths "/*"
