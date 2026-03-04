@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://rasult22.github.io',
-  base: '/wb-landing/',
+  base: '/',
   vite: {
     plugins: [tailwindcss()]
   }
