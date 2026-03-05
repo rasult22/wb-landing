@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const documents = [
+  {
+    label: 'Политика конфиденциальности',
+    href: `${base}privacy`,
+    description: 'Как мы собираем, храним и обрабатываем персональные данные пользователей.'
+  },
+  {
+    label: 'Пользовательское соглашение',
+    href: `${base}terms`,
+    description: 'Правила и условия использования сервиса SellerBox.'
+  },
+  {
+    label: 'Оферта',
+    href: `${base}offer`,
+    description: 'Договор публичной оферты на оказание услуг.'
+  },
+  {
+    label: 'Оплата услуг',
+    href: `${base}payment`,
+    description: 'Способы оплаты, безопасность платежей и возврат средств.'
+  },
+  {
+    label: 'Реквизиты',
+    href: `${base}company`,
+    description: 'Юридическая информация и банковские реквизиты компании.'
+  }
+];
+---
+
+<Layout title="О компании — SellerBox" description="Информация о компании SellerBox, документы и юридические сведения.">
+  <Header />
+  <main class="pt-32 pb-20">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <a href={base} class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 transition-colors mb-8">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Вернуться на главную
+        </a>
+
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          О компании
+        </h1>
+        <p class="text-lg text-slate-600 mb-12">
+          SellerBox — платформа инструментов для продавцов Wildberries. Сервис разработан и поддерживается компанией ТОО «Logic Layer» (Казахстан).
+        </p>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-slate-900 mb-6">Документы</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {documents.map(doc => (
+              <a href={doc.href} class="bg-white border border-slate-200 rounded-xl p-5 hover:border-brand-300 hover:shadow-md transition-all group block">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                  <div>
+                    <p class="text-slate-900 font-medium group-hover:text-brand-600 transition-colors">{doc.label}</p>
+                    <p class="text-slate-500 text-sm mt-1">{doc.description}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
